@@ -9,6 +9,9 @@ citations back to the source pages.
 generated from scraped content that may be incomplete or out of date. Always
 verify anything important on revenue.ie or with a tax professional.
 
+> **New to this / no coding experience?** See [DEPLOY.md](DEPLOY.md) for a
+> step-by-step guide to getting a live website with a shareable link.
+
 ## How it works
 
 ```
