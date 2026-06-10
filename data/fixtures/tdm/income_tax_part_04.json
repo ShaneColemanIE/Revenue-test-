@@ -1,0 +1,12 @@
+{
+  "url": "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-04/04-01-01.pdf",
+  "title": "Tax and Duty Manual Part 04-01-01: Income Tax Charge",
+  "text": "This manual sets out the basis on which income tax is charged under the Taxes Consolidation Act 1997.\n\nSection 1: Income tax is charged for each year of assessment on every person in respect of all property, profits or gains as set out in the Schedules to the Act.\n\nSection 2: A 'year of assessment' for income tax purposes is a year beginning on 1 January and ending on the following 31 December.\n\nSection 3: Where an individual is resident, ordinarily resident and domiciled in the State for a year of assessment, that individual is chargeable to income tax on their worldwide income for that year, subject to the provisions of any relevant Double Taxation Agreement.\n\nSection 4: Individuals who are non-resident are generally chargeable to income tax only on income arising in the State, including income from a trade, profession, or employment exercised in the State, and income from property situated in the State.\n\nThis is illustrative sample data used for development and testing of this application and does not represent the full or current text of any Revenue Tax and Duty Manual.",
+  "category": "tdm",
+  "content_type": "pdf",
+  "fetched_at": "2025-01-15T10:00:00+00:00",
+  "metadata": {
+    "fixture": true,
+    "tdm_part": "04-01-01"
+  }
+}

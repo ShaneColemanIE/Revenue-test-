@@ -1,0 +1,71 @@
+# Seed configuration for the revenue.ie crawler.
+#
+# NOTE: revenue.ie periodically restructures its URLs. These seeds reflect
+# the site structure at the time this was written. Before running a full
+# scrape, spot-check a few seed URLs in a browser and update any that
+# return 404s - the crawler will log and skip dead links but won't find
+# replacements on its own.
+#
+# Each category supports:
+#   seeds:        starting URLs to fetch
+#   follow_links: whether to crawl links found on fetched pages
+#   url_prefixes: only follow links whose path starts with one of these
+#   max_depth:    how many link-hops to follow from a seed
+#   allowed_domains: domains the crawler is permitted to fetch from
+
+tax_rates:
+  follow_links: false
+  max_depth: 0
+  allowed_domains:
+    - www.revenue.ie
+  seeds:
+    - https://www.revenue.ie/en/jobs-and-pensions/calculating-your-income-tax/tax-rates-and-the-standard-rate-cut-off-point.aspx
+    - https://www.revenue.ie/en/jobs-and-pensions/calculating-your-income-tax/tax-credits-and-reliefs.aspx
+    - https://www.revenue.ie/en/jobs-and-pensions/usc/standard-rates-and-thresholds.aspx
+    - https://www.revenue.ie/en/vat/vat-rates/index.aspx
+    - https://www.revenue.ie/en/gains-gifts-and-inheritance/cgt/index.aspx
+    - https://www.revenue.ie/en/gains-gifts-and-inheritance/cat-thresholds-rates-and-rules-for-historic-years/index.aspx
+    - https://www.revenue.ie/en/companies-and-charities/corporation-tax-for-companies/corporation-tax-for-companies/index.aspx
+    - https://www.revenue.ie/en/property/local-property-tax/index.aspx
+
+guidance:
+  follow_links: true
+  max_depth: 2
+  allowed_domains:
+    - www.revenue.ie
+  url_prefixes:
+    - /en/jobs-and-pensions/
+    - /en/self-assessment-and-self-employment/
+    - /en/vat/
+    - /en/property/
+    - /en/employing-people/
+    - /en/starting-a-business/
+    - /en/gains-gifts-and-inheritance/
+  seeds:
+    - https://www.revenue.ie/en/jobs-and-pensions/index.aspx
+    - https://www.revenue.ie/en/self-assessment-and-self-employment/index.aspx
+    - https://www.revenue.ie/en/vat/index.aspx
+    - https://www.revenue.ie/en/property/index.aspx
+    - https://www.revenue.ie/en/employing-people/index.aspx
+    - https://www.revenue.ie/en/starting-a-business/index.aspx
+    - https://www.revenue.ie/en/gains-gifts-and-inheritance/index.aspx
+
+tdm:
+  follow_links: true
+  max_depth: 3
+  allowed_domains:
+    - www.revenue.ie
+  url_prefixes:
+    - /en/tax-professionals/tdm/
+  seeds:
+    - https://www.revenue.ie/en/tax-professionals/tdm/index.aspx
+
+ebrief:
+  follow_links: true
+  max_depth: 2
+  allowed_domains:
+    - www.revenue.ie
+  url_prefixes:
+    - /en/tax-professionals/ebrief/
+  seeds:
+    - https://www.revenue.ie/en/tax-professionals/ebrief/index.aspx

@@ -1,0 +1,12 @@
+{
+  "url": "https://www.revenue.ie/en/jobs-and-pensions/calculating-your-income-tax/tax-rates-and-the-standard-rate-cut-off-point.aspx",
+  "title": "Tax rates and the standard rate cut-off point",
+  "text": "There are two tax rates in Ireland for personal income: a standard rate and a higher rate.\n\nThe standard rate applies up to your standard rate cut-off point. Any income above that point is taxed at the higher rate.\n\nFor a single person, widowed person or surviving civil partner without dependent children, the standard rate cut-off point is EUR 42,000 for the 2025 tax year. Income up to this amount is taxed at 20%, and any income above this amount is taxed at 40%.\n\nFor married couples or civil partners with one income, the standard rate cut-off point is EUR 51,000. For married couples or civil partners with two incomes, the standard rate cut-off point is EUR 84,000, with a maximum increase of EUR 33,000 depending on the lower income.\n\nFor a single parent qualifying for the Single Person Child Carer Credit, the standard rate cut-off point is EUR 46,000.\n\nThese figures are illustrative sample data used for development and testing of this application. Always confirm current rates on revenue.ie.",
+  "category": "tax_rates",
+  "content_type": "html",
+  "fetched_at": "2025-01-15T10:00:00+00:00",
+  "metadata": {
+    "fixture": true,
+    "tax_year": "2025"
+  }
+}

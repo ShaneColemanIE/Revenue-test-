@@ -1,0 +1,12 @@
+{
+  "url": "https://www.revenue.ie/en/jobs-and-pensions/usc/standard-rates-and-thresholds.aspx",
+  "title": "USC standard rates and thresholds",
+  "text": "Universal Social Charge (USC) is payable on gross income, including notional pay, before any pension contributions are deducted.\n\nFor 2025, the standard rates of USC are:\n\nIncome up to EUR 12,012 is charged at 0.5%.\nIncome from EUR 12,012.01 to EUR 27,382 is charged at 2%.\nIncome from EUR 27,382.01 to EUR 70,044 is charged at 3%.\nIncome above EUR 70,044 is charged at 8%.\n\nIf your total income for the year does not exceed EUR 13,000, you are exempt from USC.\n\nSelf-employed individuals with non-PAYE income exceeding EUR 100,000 pay an additional 3% surcharge on the portion of income above EUR 100,000.\n\nThese figures are illustrative sample data used for development and testing of this application. Always confirm current rates on revenue.ie.",
+  "category": "tax_rates",
+  "content_type": "html",
+  "fetched_at": "2025-01-15T10:00:00+00:00",
+  "metadata": {
+    "fixture": true,
+    "tax_year": "2025"
+  }
+}

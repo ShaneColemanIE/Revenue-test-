@@ -1,0 +1,12 @@
+{
+  "url": "https://www.revenue.ie/en/tax-professionals/ebrief/2025/no-012025.html",
+  "title": "eBrief No. 01/2025: Updated guidance on Remote Working Relief",
+  "text": "Revenue has updated the Tax and Duty Manual dealing with e-Working and Remote Working Relief to reflect changes announced in Budget 2025.\n\nThe key changes are:\n\n1. The rate of relief available for allowable utility expenses (heat, electricity and broadband) incurred while working from home has been increased to 30% of the cost attributable to remote working days.\n\n2. The manual has been updated to clarify the records an employee should retain to support a claim, including the number of days worked remotely and copies of relevant utility bills.\n\n3. Guidance on the treatment of equipment provided by employers for remote working purposes has been clarified, confirming that such provision does not give rise to a benefit-in-kind charge where the equipment is provided primarily for business use.\n\nEmployees can claim this relief through their Income Tax return (Form 12) or via myAccount.\n\nThis is illustrative sample data used for development and testing of this application.",
+  "category": "ebrief",
+  "content_type": "html",
+  "fetched_at": "2025-01-15T10:00:00+00:00",
+  "metadata": {
+    "fixture": true,
+    "ebrief_number": "01/2025"
+  }
+}

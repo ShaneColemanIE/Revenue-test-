@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irish Revenue Q&amp;A</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Irish Revenue Q&amp;A</h1>
+      <p class="subtitle">
+        Ask questions about Irish tax rates, guidance, and Revenue manuals.
+        Answers are generated from indexed revenue.ie content and may be
+        incomplete or out of date &mdash; always verify with
+        <a href="https://www.revenue.ie" target="_blank" rel="noopener">revenue.ie</a>
+        for anything important.
+      </p>
+    </header>
+
+    <main id="chat" class="chat"></main>
+
+    <form id="ask-form" class="ask-form">
+      <input
+        id="question"
+        type="text"
+        placeholder="e.g. What is the standard rate cut-off point for a single person?"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="submit-btn">Ask</button>
+    </form>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

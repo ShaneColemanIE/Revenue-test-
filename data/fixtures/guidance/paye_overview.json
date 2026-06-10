@@ -1,0 +1,11 @@
+{
+  "url": "https://www.revenue.ie/en/jobs-and-pensions/index.aspx",
+  "title": "Jobs and pensions: PAYE overview",
+  "text": "If you are an employee, you pay tax through the Pay As You Earn (PAYE) system. Your employer deducts tax, Universal Social Charge (USC) and Pay Related Social Insurance (PRSI) from your wages or salary before you receive your pay.\n\nYour employer calculates these deductions based on the tax credits and rate band shown on your Revenue Payroll Notification (RPN). You can view and manage your tax credits, allowances and reliefs using myAccount on the revenue.ie website.\n\nWhen you start a new job, you should register the new employment with Revenue using myAccount so your employer can request your RPN and apply the correct tax treatment from your first pay day. If you do not do this, you may be taxed on the emergency basis.\n\nAt the end of the year, or whenever you wish, you can complete an Income Tax return (Form 12) to claim any additional tax credits or reliefs you are entitled to, such as health expenses, tuition fees, or remote working relief.\n\nThis is illustrative sample data used for development and testing of this application.",
+  "category": "guidance",
+  "content_type": "html",
+  "fetched_at": "2025-01-15T10:00:00+00:00",
+  "metadata": {
+    "fixture": true
+  }
+}
