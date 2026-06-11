@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     scraper_delay_seconds: float = 1.0
     scraper_max_pages_per_source: int = 200
 
-    retrieval_top_k: int = 6
+    retrieval_top_k: int = 8
 
     @property
     def index_file(self) -> Path:
