@@ -25,7 +25,14 @@ class BaseScraper:
 
     def __init__(self) -> None:
         self.session = requests.Session()
-        self.session.headers.update({"User-Agent": settings.scraper_user_agent})
+        self.session.headers.update(
+            {
+                "User-Agent": settings.scraper_user_agent,
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "en-IE,en;q=0.9",
+                "Accept-Encoding": "gzip, deflate, br",
+            }
+        )
         self.delay_seconds = settings.scraper_delay_seconds
         self.max_pages = settings.scraper_max_pages_per_source
         self._robots_cache: dict[str, urllib.robotparser.RobotFileParser] = {}
