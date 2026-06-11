@@ -1,7 +1,7 @@
 services:
   - type: web
     name: irish-revenue-qa
-    runtime: python
+    env: python
     plan: free
     buildCommand: |
       pip install -r requirements.txt
