@@ -15,6 +15,6 @@ services:
       - key: ANTHROPIC_API_KEY
         sync: false
       - key: SCRAPER_MAX_PAGES_PER_SOURCE
-        value: "25"
+        value: "150"
       - key: SCRAPER_DELAY_SECONDS
         value: "0.5"
