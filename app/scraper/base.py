@@ -39,10 +39,20 @@ class BaseScraper:
         if origin not in self._robots_cache:
             parser = urllib.robotparser.RobotFileParser()
             parser.set_url(f"{origin}/robots.txt")
+            # Fetch with our own session (proper User-Agent) rather than
+            # RobotFileParser.read()'s bare urllib.request, which some sites'
+            # WAFs reject with a 403 - and urllib.robotparser treats a 401/403
+            # as "disallow everything", masking a bot-blocked robots.txt
+            # fetch as a deliberate site-wide disallow.
             try:
-                parser.read()
+                response = self.session.get(f"{origin}/robots.txt", timeout=10)
+                if response.status_code == 200:
+                    parser.parse(response.text.splitlines())
+                else:
+                    parser.allow_all = True
             except Exception:
-                logger.warning("Could not read robots.txt for %s; assuming allowed", origin)
+                logger.warning("Could not fetch robots.txt for %s; assuming allowed", origin)
+                parser.allow_all = True
             self._robots_cache[origin] = parser
         return self._robots_cache[origin]
 

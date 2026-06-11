@@ -1,3 +1,5 @@
+from unittest.mock import Mock, patch
+
 from app.scraper.base import BaseScraper
 from app.scraper.crawler import ConfigurableCrawler
 
@@ -73,6 +75,24 @@ def test_normalize_strips_url_fragment():
     assert ConfigurableCrawler._normalize("https://www.revenue.ie/en/page.aspx#section-2") == (
         "https://www.revenue.ie/en/page.aspx"
     )
+
+
+def test_allowed_by_robots_treats_blocked_robots_txt_as_allowed():
+    """A 403/non-200 fetching robots.txt (e.g. a WAF blocking the request)
+    should not be treated as a site-wide disallow."""
+    scraper = BaseScraper()
+
+    with patch.object(scraper.session, "get", return_value=Mock(status_code=403, text="")):
+        assert scraper.allowed_by_robots("https://www.cro.ie/")
+
+
+def test_allowed_by_robots_respects_real_robots_txt():
+    scraper = BaseScraper()
+    robots_txt = "User-agent: *\nDisallow: /private/\n"
+
+    with patch.object(scraper.session, "get", return_value=Mock(status_code=200, text=robots_txt)):
+        assert scraper.allowed_by_robots("https://www.example.com/public/page")
+        assert not scraper.allowed_by_robots("https://www.example.com/private/page")
 
 
 def test_extract_links_resolves_and_filters():
