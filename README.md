@@ -1,9 +1,11 @@
 # Irish Revenue Q&A
 
 A small app that scrapes content from [revenue.ie](https://www.revenue.ie) (tax
-rates & thresholds, Tax and Duty Manuals, general guidance, and eBriefs),
-indexes it for search, and answers questions about it using Claude with
-citations back to the source pages.
+rates & thresholds, Tax and Duty Manuals, general guidance, and eBriefs) and
+[cro.ie](https://www.cro.ie) (Companies Registration Office guidance on
+registering and running companies and business names), indexes it for search,
+and answers questions about it using Claude with citations back to the source
+pages.
 
 **This is general information, not professional tax advice.** Answers are
 generated from scraped content that may be incomplete or out of date. Always
@@ -18,9 +20,10 @@ verify anything important on revenue.ie or with a tax professional.
 scrape → data/raw/<category>/*.json → build index → data/index/chunks.jsonl → BM25 search → Claude → answer + sources
 ```
 
-1. **Scraper** (`app/scraper/`) crawls revenue.ie pages/PDFs configured in
-   `app/scraper/sources.yaml`, extracts clean text (via `trafilatura` for HTML
-   and `pypdf` for PDFs), and writes one JSON file per page to `data/raw/`.
+1. **Scraper** (`app/scraper/`) crawls revenue.ie and cro.ie pages/PDFs
+   configured in `app/scraper/sources.yaml`, extracts clean text (via
+   `trafilatura` for HTML and `pypdf` for PDFs), and writes one JSON file per
+   page to `data/raw/`.
 2. **Indexer** (`app/ingestion/`) chunks each document and writes them to
    `data/index/chunks.jsonl`.
 3. **Retriever** (`app/qa/retriever.py`) uses BM25 (keyword-based ranking,
@@ -41,24 +44,25 @@ cp .env.example .env
 # edit .env and set ANTHROPIC_API_KEY
 ```
 
-## 1. Scrape revenue.ie
+## 1. Scrape revenue.ie and cro.ie
 
-Requires network access to www.revenue.ie (this won't work from a sandbox
-without internet access).
+Requires network access to www.revenue.ie and www.cro.ie (this won't work
+from a sandbox without internet access).
 
 ```bash
 python scripts/scrape.py                  # all categories
 python scripts/scrape.py tax_rates ebrief # specific categories only
+python scripts/scrape.py cro              # CRO company-registration guidance
 ```
 
 This writes JSON files to `data/raw/<category>/`.
 
 > **Before running a full scrape**, spot-check a few seed URLs in
-> `app/scraper/sources.yaml` in a browser. revenue.ie restructures its URLs
+> `app/scraper/sources.yaml` in a browser. Both sites restructure their URLs
 > periodically; the crawler logs and skips any URL that 404s but won't find
 > replacements automatically. The crawler respects `robots.txt` and waits
 > `SCRAPER_DELAY_SECONDS` between requests (default 1s) - please keep a
-> reasonable delay since this is a public service's website.
+> reasonable delay since these are public services' websites.
 
 ## 2. Build the search index
 
@@ -96,7 +100,7 @@ curl -X POST http://localhost:8000/api/ask \
 
 Optional request fields:
 - `top_k` (1-20): number of chunks to retrieve (default 6)
-- `category`: restrict retrieval to one of `tax_rates`, `tdm`, `guidance`, `ebrief`
+- `category`: restrict retrieval to one of `tax_rates`, `tdm`, `guidance`, `ebrief`, `cro`
 
 `GET /api/health` reports how many chunks are currently indexed.
 

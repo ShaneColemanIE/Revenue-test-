@@ -1,0 +1,11 @@
+{
+  "url": "https://www.cro.ie/Registration/Company",
+  "title": "Registering a company in Ireland",
+  "text": "The Companies Registration Office (CRO) is the central repository of public statutory information on companies and business names in Ireland.\n\nTo register a new private company limited by shares (an LTD), you must submit an A1 form together with a constitution to the CRO, along with the appropriate registration fee. Applications can be filed online via the CRO's CORE system or by post.\n\nOnce a company is incorporated, the CRO issues a Certificate of Incorporation showing the company's unique CRO number. The company must then file an annual return (Form B1) every year, even if it has not traded, and keep its registered office address up to date.\n\nA business name (a name under which a sole trader, partnership, or company trades that is different from its own legal name) must be registered separately using a Form RBN1, RBN1A, or RBN1B depending on whether the applicant is an individual, partnership, or body corporate.\n\nThis is illustrative sample data used for development and testing of this application. Always confirm current forms, fees, and procedures on cro.ie.",
+  "category": "cro",
+  "content_type": "html",
+  "fetched_at": "2025-01-15T10:00:00+00:00",
+  "metadata": {
+    "fixture": true
+  }
+}

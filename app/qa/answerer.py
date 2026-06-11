@@ -7,7 +7,7 @@ from app.qa.prompts import SYSTEM_PROMPT, build_user_message
 from app.qa.retriever import retrieve
 
 NO_CONTEXT_ANSWER = (
-    "I don't have any indexed revenue.ie content yet, so I can't answer that. "
+    "I don't have any indexed revenue.ie or cro.ie content yet, so I can't answer that. "
     "Run the scraper and index-builder first (see README), then ask again."
 )
 

@@ -6,7 +6,7 @@ from app.qa.answerer import answer_question
 
 router = APIRouter(prefix="/api")
 
-VALID_CATEGORIES = {"tax_rates", "tdm", "guidance", "ebrief"}
+VALID_CATEGORIES = {"tax_rates", "tdm", "guidance", "ebrief", "cro"}
 
 
 @router.get("/health", response_model=HealthResponse)

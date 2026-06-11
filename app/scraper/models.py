@@ -6,12 +6,12 @@ from datetime import datetime, timezone
 
 @dataclass
 class ScrapedDocument:
-    """A single page or PDF pulled from revenue.ie, reduced to clean text."""
+    """A single page or PDF pulled from revenue.ie or cro.ie, reduced to clean text."""
 
     url: str
     title: str
     text: str
-    category: str  # tax_rates | tdm | guidance | ebrief
+    category: str  # tax_rates | tdm | guidance | ebrief | cro
     content_type: str  # html | pdf
     fetched_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     metadata: dict = field(default_factory=dict)

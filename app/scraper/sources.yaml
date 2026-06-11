@@ -1,6 +1,6 @@
-# Seed configuration for the revenue.ie crawler.
+# Seed configuration for the revenue.ie and cro.ie crawlers.
 #
-# NOTE: revenue.ie periodically restructures its URLs. These seeds reflect
+# NOTE: these sites periodically restructure their URLs. These seeds reflect
 # the site structure at the time this was written. Before running a full
 # scrape, spot-check a few seed URLs in a browser and update any that
 # return 404s - the crawler will log and skip dead links but won't find
@@ -69,3 +69,20 @@ ebrief:
     - /en/tax-professionals/ebrief/
   seeds:
     - https://www.revenue.ie/en/tax-professionals/ebrief/index.aspx
+
+# Companies Registration Office (CRO) - general informational pages about
+# registering and running companies/business names in Ireland (fees, forms,
+# annual returns, FAQs). This deliberately does NOT include the CRO company
+# search/register itself (that's a separate database, not crawlable pages).
+# No url_prefixes are set, so the crawler follows any in-domain link from the
+# homepage up to max_depth - check the build log for "Saved N documents for
+# category cro" and adjust seeds/url_prefixes if it strays into unwanted
+# sections (e.g. news archives) or misses the pages you care about.
+cro:
+  follow_links: true
+  max_depth: 3
+  allowed_domains:
+    - www.cro.ie
+    - cro.ie
+  seeds:
+    - https://www.cro.ie/
