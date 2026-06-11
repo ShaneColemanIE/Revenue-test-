@@ -3,13 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Irish Revenue Q&amp;A</title>
+  <title>CRO and Irish Revenue Guide</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <div class="app">
-    <header>
-      <h1>Irish Revenue Q&amp;A</h1>
+    <header class="app-header">
+      <div class="header-top">
+        <div class="header-icons" aria-hidden="true">
+          <span class="icon-badge icon-cro" title="CRO - company registration">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 10l9-6 9 6" />
+              <path d="M4 10v9h16v-9" />
+              <path d="M9 10v9M12 10v9M15 10v9" />
+              <path d="M2 21h20" />
+            </svg>
+          </span>
+          <span class="icon-badge icon-revenue" title="Revenue - tax">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14 2v6h6" />
+              <path d="M10.5 17.5c-1.4 0-2.5-1.34-2.5-3s1.1-3 2.5-3c.7 0 1.4.32 1.9.9" />
+              <path d="M7 12.5h3M7 15h3" />
+            </svg>
+          </span>
+          <span class="icon-badge icon-accountancy" title="Accountancy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2" />
+              <line x1="8" y1="6" x2="16" y2="6" />
+              <line x1="8" y1="10.5" x2="8" y2="10.51" />
+              <line x1="12" y1="10.5" x2="12" y2="10.51" />
+              <line x1="16" y1="10.5" x2="16" y2="10.51" />
+              <line x1="8" y1="14" x2="8" y2="14.01" />
+              <line x1="12" y1="14" x2="12" y2="14.01" />
+              <line x1="16" y1="14" x2="16" y2="14.01" />
+              <line x1="8" y1="17.5" x2="8" y2="17.51" />
+              <line x1="12" y1="17.5" x2="12" y2="17.51" />
+              <line x1="16" y1="17.5" x2="16" y2="17.51" />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <h1>CRO and Irish Revenue Guide</h1>
       <p class="subtitle">
         Ask questions about Irish tax rates, guidance, Revenue manuals, and
         company registration with the CRO. Answers are generated from indexed
@@ -22,7 +57,16 @@
       </p>
     </header>
 
-    <main id="chat" class="chat"></main>
+    <main id="chat" class="chat">
+      <div class="message-row bot">
+        <div class="avatar avatar-bot" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+          </svg>
+        </div>
+        <div class="bubble bot">Hi! I can help with questions about Irish tax (Revenue) and company or business name registration (CRO) &mdash; e.g. tax rates and credits, VAT, USC, setting up a company, annual returns, and fees. What would you like to know?</div>
+      </div>
+    </main>
 
     <form id="ask-form" class="ask-form">
       <input
@@ -32,7 +76,12 @@
         autocomplete="off"
         required
       />
-      <button type="submit" id="submit-btn">Ask</button>
+      <button type="submit" id="submit-btn" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13" />
+          <polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+      </button>
     </form>
   </div>
 

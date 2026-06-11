@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 
 from app.api.routes import router as api_router
 
-app = FastAPI(title="Irish Revenue Q&A")
+app = FastAPI(title="CRO and Irish Revenue Guide")
 
 app.include_router(api_router)
 
