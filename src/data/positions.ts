@@ -16,3 +16,14 @@ export const POSITIONS: { label: string; short: string }[] = [
   { label: 'Full-Forward', short: 'FF' },
   { label: 'Left Corner-Forward', short: 'LCF' },
 ];
+
+// Position indices (0-14) grouped into rows for a "pitch" layout,
+// ordered top (attack) to bottom (goalkeeper).
+export const PITCH_ROWS: number[][] = [
+  [12, 13, 14], // full-forward line
+  [9, 10, 11], // half-forward line
+  [7, 8], // midfield
+  [4, 5, 6], // half-back line
+  [1, 2, 3], // full-back line
+  [0], // goalkeeper
+];

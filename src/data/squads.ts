@@ -207,9 +207,4 @@ function buildSquads(): YearSquad[] {
 
 export const SQUADS: YearSquad[] = buildSquads();
 
-/** All draft candidates for a given position (0-14), one per season 1990-2026. */
-export function candidatesForPosition(position: number): Candidate[] {
-  return SQUADS.map((squad) => squad.players[position]);
-}
-
 export const NUM_POSITIONS = POSITIONS.length;

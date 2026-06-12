@@ -1,0 +1,45 @@
+import { PITCH_ROWS, POSITIONS } from '../data/positions';
+import type { Candidate, YearSquad } from '../data/squads';
+
+interface PlayerPickerProps {
+  squad: YearSquad;
+  selected: Candidate | null;
+  onSelect: (candidate: Candidate) => void;
+}
+
+export function PlayerPicker({ squad, selected, onSelect }: PlayerPickerProps) {
+  return (
+    <div className="w-full max-w-3xl rounded-2xl border-2 border-limerick-light/40 bg-gradient-to-b from-limerick-light/10 to-limerick-dark/40 p-3 sm:p-6 space-y-2 sm:space-y-3">
+      {PITCH_ROWS.map((row, i) => (
+        <div
+          key={i}
+          className="grid gap-2"
+          style={{ gridTemplateColumns: `repeat(${row.length}, minmax(0,1fr))` }}
+        >
+          {row.map((posIdx) => {
+            const candidate = squad.players[posIdx];
+            const isSelected = selected === candidate;
+
+            return (
+              <button
+                key={posIdx}
+                onClick={() => onSelect(candidate)}
+                className={`rounded-xl px-2 sm:px-3 py-2 sm:py-3 text-center border transition-colors hover:scale-[1.03] active:scale-95 ${
+                  isSelected
+                    ? 'bg-saffron/20 border-saffron ring-2 ring-saffron'
+                    : 'bg-white/10 border-white/15 hover:bg-white/15'
+                }`}
+              >
+                <p className="text-[10px] sm:text-xs uppercase tracking-wider text-saffron font-bold">
+                  {POSITIONS[posIdx].short}
+                </p>
+                <p className="font-extrabold text-sm sm:text-base leading-tight mt-0.5">{candidate.name}</p>
+                <p className="text-[10px] sm:text-xs font-bold text-saffron mt-1">{candidate.rating}</p>
+              </button>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  );
+}

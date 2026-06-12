@@ -1,29 +1,29 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { Candidate } from '../data/squads';
+import type { YearSquad } from '../data/squads';
 
-interface SpinReelProps {
-  candidates: Candidate[];
-  target: Candidate | null;
+interface TeamSpinReelProps {
+  squads: YearSquad[];
+  target: YearSquad | null;
   onSpinEnd: () => void;
 }
 
 const ITEM_HEIGHT = 92;
 const REPEATS = 3;
 
-export function SpinReel({ candidates, target, onSpinEnd }: SpinReelProps) {
+export function TeamSpinReel({ squads, target, onSpinEnd }: TeamSpinReelProps) {
   const [offset, setOffset] = useState(0);
   const [animate, setAnimate] = useState(false);
 
-  const reel = useMemo<Candidate[]>(() => {
+  const reel = useMemo<YearSquad[]>(() => {
     if (!target) return [];
 
-    const targetIdx = candidates.findIndex((c) => c.year === target.year);
-    const extended: Candidate[] = [];
-    for (let r = 0; r < REPEATS; r++) extended.push(...candidates);
-    extended.push(...candidates.slice(0, targetIdx + 1));
-    extended.push(candidates[(targetIdx + 1) % candidates.length]);
+    const targetIdx = squads.findIndex((s) => s.year === target.year);
+    const extended: YearSquad[] = [];
+    for (let r = 0; r < REPEATS; r++) extended.push(...squads);
+    extended.push(...squads.slice(0, targetIdx + 1));
+    extended.push(squads[(targetIdx + 1) % squads.length]);
     return extended;
-  }, [target, candidates]);
+  }, [target, squads]);
 
   useEffect(() => {
     if (reel.length === 0) return;
@@ -42,8 +42,8 @@ export function SpinReel({ candidates, target, onSpinEnd }: SpinReelProps) {
     return (
       <div className="relative h-[276px] w-full max-w-md mx-auto overflow-hidden rounded-2xl border-2 border-dashed border-saffron/40 bg-limerick-dark/40 flex items-center justify-center">
         <p className="text-emerald-100/60 text-sm sm:text-base px-6 text-center">
-          Press <span className="text-saffron font-semibold">Spin</span> to draft a player for
-          this position
+          Press <span className="text-saffron font-semibold">Spin</span> to reveal a Limerick team
+          from history
         </p>
       </div>
     );
@@ -61,28 +61,25 @@ export function SpinReel({ candidates, target, onSpinEnd }: SpinReelProps) {
         }}
         onTransitionEnd={onSpinEnd}
       >
-        {reel.map((candidate, i) => (
-          <ReelRow key={i} candidate={candidate} />
+        {reel.map((squad, i) => (
+          <ReelRow key={i} squad={squad} />
         ))}
       </div>
     </div>
   );
 }
 
-function ReelRow({ candidate }: { candidate: Candidate }) {
+function ReelRow({ squad }: { squad: YearSquad }) {
+  const overall = Math.round(squad.players.reduce((sum, p) => sum + p.rating, 0) / squad.players.length);
+
   return (
-    <div
-      className="flex items-center justify-between gap-4 px-5 sm:px-6"
-      style={{ height: ITEM_HEIGHT }}
-    >
+    <div className="flex items-center justify-between gap-4 px-5 sm:px-6" style={{ height: ITEM_HEIGHT }}>
       <div className="text-left">
-        <p className="font-extrabold text-lg sm:text-xl leading-tight">{candidate.name}</p>
-        <p className="text-xs sm:text-sm text-emerald-100/70">
-          {candidate.year} &middot; {candidate.status}
-        </p>
+        <p className="font-extrabold text-lg sm:text-xl leading-tight">Limerick {squad.year}</p>
+        <p className="text-xs sm:text-sm text-emerald-100/70">{squad.status}</p>
       </div>
       <div className="shrink-0 w-11 h-11 rounded-full bg-saffron text-limerick-dark font-bold flex items-center justify-center text-sm">
-        {candidate.rating}
+        {overall}
       </div>
     </div>
   );

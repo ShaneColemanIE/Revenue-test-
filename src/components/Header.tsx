@@ -8,8 +8,8 @@ export function Header() {
         Build the Dream <span className="text-saffron">Limerick XV</span>
       </h1>
       <p className="text-emerald-100/80 mt-2 max-w-xl mx-auto text-sm sm:text-base">
-        Spin the wheel, draft a player from 37 years of Treaty hurling, fill all 15 positions
-        and find out if your Dream XV can win the All-Ireland.
+        Spin the wheel, draft players from 37 years of Limerick teams, build your Dream XV and
+        find out if it can win the All-Ireland.
       </p>
     </header>
   );
