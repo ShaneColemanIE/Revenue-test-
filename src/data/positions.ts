@@ -27,3 +27,8 @@ export const PITCH_ROWS: number[][] = [
   [1, 2, 3], // full-back line
   [0], // goalkeeper
 ];
+
+/** The line (row of PITCH_ROWS) a position belongs to, e.g. RHB/CB/LHB. */
+export function lineOf(position: number): number[] {
+  return PITCH_ROWS.find((row) => row.includes(position)) ?? [position];
+}

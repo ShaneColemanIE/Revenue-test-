@@ -1,4 +1,4 @@
-import { POSITIONS } from '../data/positions';
+import { lineOf, POSITIONS } from '../data/positions';
 import { SQUADS, type Candidate, type YearSquad } from '../data/squads';
 import { TeamSpinReel } from './TeamSpinReel';
 import { PlayerPicker } from './PlayerPicker';
@@ -7,6 +7,7 @@ import { PositionPicker } from './PositionPicker';
 interface DraftScreenProps {
   pickNumber: number;
   team: (Candidate | null)[];
+  draftedNames: string[];
   spunSquad: YearSquad | null;
   spinning: boolean;
   selectedPlayer: Candidate | null;
@@ -22,6 +23,7 @@ interface DraftScreenProps {
 export function DraftScreen({
   pickNumber,
   team,
+  draftedNames,
   spunSquad,
   spinning,
   selectedPlayer,
@@ -90,7 +92,13 @@ export function DraftScreen({
               Pick a player from this team to add to your Dream XV
             </p>
           </div>
-          <PlayerPicker squad={spunSquad} selected={selectedPlayer} onSelect={onSelectPlayer} />
+          <PlayerPicker
+            squad={spunSquad}
+            team={team}
+            draftedNames={draftedNames}
+            selected={selectedPlayer}
+            onSelect={onSelectPlayer}
+          />
         </div>
       )}
 
@@ -98,9 +106,15 @@ export function DraftScreen({
         <div className="w-full flex flex-col items-center gap-4 animate-pop-in">
           <div className="text-center">
             <p className="text-xl sm:text-2xl font-extrabold">{selectedPlayer.name}</p>
-            <p className="text-emerald-100/70 text-sm mt-1">Choose a position in your Dream XV</p>
+            <p className="text-emerald-100/70 text-sm mt-1">
+              Choose a position in the {POSITIONS[selectedPlayer.position].short} line of your Dream XV
+            </p>
           </div>
-          <PositionPicker team={team} onPlace={onPlacePlayer} />
+          <PositionPicker
+            team={team}
+            allowedPositions={lineOf(selectedPlayer.position)}
+            onPlace={onPlacePlayer}
+          />
         </div>
       )}
     </div>

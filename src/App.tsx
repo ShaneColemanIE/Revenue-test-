@@ -7,7 +7,13 @@ import { RolesScreen } from './components/RolesScreen';
 import { ResultScreen } from './components/ResultScreen';
 import { SQUADS, NUM_POSITIONS, type Candidate, type YearSquad } from './data/squads';
 import { DIFFICULTIES, type Difficulty } from './data/difficulty';
+import { lineOf } from './data/positions';
 import { simulateChampionship, type ChampionshipResult, type Roles } from './lib/simulate';
+
+function isSelectable(candidate: Candidate, team: (Candidate | null)[], draftedNames: string[]): boolean {
+  if (draftedNames.includes(candidate.name)) return false;
+  return lineOf(candidate.position).some((p) => team[p] === null);
+}
 
 type Screen = 'intro' | 'draft' | 'roster' | 'roles' | 'result';
 
@@ -16,6 +22,7 @@ function App() {
   const [difficulty, setDifficulty] = useState<Difficulty>('normal');
   const [rerollsLeft, setRerollsLeft] = useState<number>(DIFFICULTIES.normal.rerolls);
   const [team, setTeam] = useState<(Candidate | null)[]>(Array(NUM_POSITIONS).fill(null));
+  const [draftedNames, setDraftedNames] = useState<string[]>([]);
   const [pickNumber, setPickNumber] = useState(0);
   const [spunSquad, setSpunSquad] = useState<YearSquad | null>(null);
   const [spinning, setSpinning] = useState(false);
@@ -25,7 +32,11 @@ function App() {
   const [overall, setOverall] = useState(0);
 
   function startSpin() {
-    const squad = SQUADS[Math.floor(Math.random() * SQUADS.length)];
+    const available = SQUADS.filter((squad) =>
+      squad.players.some((p) => isSelectable(p, team, draftedNames)),
+    );
+    const pool = available.length > 0 ? available : SQUADS;
+    const squad = pool[Math.floor(Math.random() * pool.length)];
     setSpunSquad(squad);
     setSelectedPlayer(null);
     setSpinning(true);
@@ -58,6 +69,7 @@ function App() {
     const nextTeam = [...team];
     nextTeam[positionIndex] = selectedPlayer;
     setTeam(nextTeam);
+    setDraftedNames((names) => [...names, selectedPlayer.name]);
     setSelectedPlayer(null);
     setSpunSquad(null);
 
@@ -78,6 +90,7 @@ function App() {
 
   function handleRestart() {
     setTeam(Array(NUM_POSITIONS).fill(null));
+    setDraftedNames([]);
     setPickNumber(0);
     setSpunSquad(null);
     setSelectedPlayer(null);
@@ -98,6 +111,7 @@ function App() {
           <DraftScreen
             pickNumber={pickNumber}
             team={team}
+            draftedNames={draftedNames}
             spunSquad={spunSquad}
             spinning={spinning}
             selectedPlayer={selectedPlayer}
