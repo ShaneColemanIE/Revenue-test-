@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-limerick: #16753c;
+  --color-limerick-dark: #0c4426;
+  --color-limerick-light: #2fa35c;
+  --color-saffron: #f8c537;
+  --font-display: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-display);
+  }
+
+  body {
+    margin: 0;
+    background: radial-gradient(circle at top, #0c4426 0%, #062014 65%, #03100a 100%);
+    color: #f5fdf8;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.35s ease-out;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-shine {
+  background: linear-gradient(110deg, #f8c537 30%, #fff7d6 50%, #f8c537 70%);
+  background-size: 200% auto;
+  animation: shine 2.5s linear infinite;
+}
