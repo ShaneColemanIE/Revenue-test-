@@ -170,6 +170,38 @@ const HURLING_QUESTIONS = [
     correct: 0,
     difficulty: "easy",
     fact: "Camogie is the women's version of hurling, played with very similar rules!"
+  },
+  {
+    q: "While holding the sliotar in their hand, how many times can a player catch it before they must let it go?",
+    emoji: "🤚",
+    options: ["Twice", "Once", "Three times", "As many times as they like"],
+    correct: 0,
+    difficulty: "hard",
+    fact: "A player can only catch the sliotar in their hand twice while in possession!"
+  },
+  {
+    q: "If a player is running with the sliotar in their hand, after how many steps must they bounce it or balance it on the hurley?",
+    emoji: "👟",
+    options: ["Four steps", "Two steps", "Eight steps", "One step"],
+    correct: 0,
+    difficulty: "hard",
+    fact: "After four steps, a player must bounce the sliotar or balance it on the hurley to keep going!"
+  },
+  {
+    q: "About how long is a hurling pitch from end to end?",
+    emoji: "📏",
+    options: ["Around 130-145 metres", "Around 50 metres", "Around 300 metres", "Around 20 metres"],
+    correct: 0,
+    difficulty: "hard",
+    fact: "That's even longer than a soccer pitch - hurling needs lots of room to run!"
+  },
+  {
+    q: "How high above the ground is the crossbar on a hurling goal?",
+    emoji: "🥅",
+    options: ["2.5 metres", "1 metre", "5 metres", "10 metres"],
+    correct: 0,
+    difficulty: "hard",
+    fact: "The crossbar sits 2.5 metres up - about the height of a tall doorway!"
   }
 ];
 
@@ -341,5 +373,37 @@ const FOOTBALL_QUESTIONS = [
     correct: 0,
     difficulty: "medium",
     fact: "A point can be scored by kicking OR hand-passing the ball over the bar!"
+  },
+  {
+    q: "What is it called when a player drops the ball and toe-kicks it back up into their hands while running?",
+    emoji: "👟",
+    options: ["Soloing", "Bouncing", "Juggling", "Dribbling"],
+    correct: 0,
+    difficulty: "hard",
+    fact: "That clever skill of dropping and toe-kicking the ball back up is called 'soloing'!"
+  },
+  {
+    q: "About how long is a Gaelic football pitch from end to end?",
+    emoji: "📏",
+    options: ["Around 130-145 metres", "Around 50 metres", "Around 300 metres", "Around 20 metres"],
+    correct: 0,
+    difficulty: "hard",
+    fact: "Same as a hurling pitch - a big rectangle, 130-145 metres long!"
+  },
+  {
+    q: "How high above the ground is the crossbar on a Gaelic football goal?",
+    emoji: "🥅",
+    options: ["2.5 metres", "1 metre", "5 metres", "10 metres"],
+    correct: 0,
+    difficulty: "hard",
+    fact: "The crossbar is 2.5 metres high, just like in hurling!"
+  },
+  {
+    q: "A hand pass in Gaelic football is a strike of the ball using which part of the hand?",
+    emoji: "🤚",
+    options: ["The side of a closed fist", "The fingertips only", "The back of the hand", "The wrist"],
+    correct: 0,
+    difficulty: "hard",
+    fact: "A hand pass is a strike with the side of a closed fist (or a tap with an open hand) - not a throw!"
   }
 ];

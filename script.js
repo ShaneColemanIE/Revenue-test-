@@ -90,6 +90,8 @@
 
     if (state.age === 'junior') {
       pool = pool.filter((q) => q.difficulty === 'easy');
+    } else {
+      pool = pool.filter((q) => q.difficulty === 'medium' || q.difficulty === 'hard');
     }
 
     pool = shuffle(pool);
