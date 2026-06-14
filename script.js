@@ -15,6 +15,27 @@
     score: 0,
   };
 
+  // Map sport emojis to the custom icon images
+  const ICON_IMAGES = {
+    '🏑': { src: 'images/hurling-icon.png', alt: 'Hurling' },
+    '⚽': { src: 'images/football-icon.png', alt: 'Gaelic Football' },
+  };
+
+  function setQuestionEmoji(emoji) {
+    const el = document.getElementById('question-emoji');
+    const icon = ICON_IMAGES[emoji];
+    if (icon) {
+      el.innerHTML = '';
+      const img = document.createElement('img');
+      img.src = icon.src;
+      img.alt = icon.alt;
+      img.className = 'icon-img icon-question';
+      el.appendChild(img);
+    } else {
+      el.textContent = emoji;
+    }
+  }
+
   function showScreen(name) {
     Object.values(screens).forEach((s) => s.classList.remove('active'));
     screens[name].classList.add('active');
@@ -95,7 +116,7 @@
     document.getElementById('progress-label').textContent = `Question ${state.index + 1} of ${total}`;
     document.getElementById('progress-fill').style.width = `${(state.index / total) * 100}%`;
     document.getElementById('score-label').textContent = state.score;
-    document.getElementById('question-emoji').textContent = q.emoji;
+    setQuestionEmoji(q.emoji);
     document.getElementById('question-text').textContent = q.q;
 
     const grid = document.getElementById('answers-grid');

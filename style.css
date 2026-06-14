@@ -85,6 +85,32 @@ body {
   animation: spin 4s linear infinite;
 }
 
+/* Sport icon images (hurling & Gaelic football) */
+.icon-img {
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+.icon-header {
+  height: 1.4em;
+  width: 1.4em;
+}
+
+.icon-big {
+  height: clamp(1.8rem, 7vw, 2.6rem);
+  width: clamp(1.8rem, 7vw, 2.6rem);
+}
+
+.icon-choice {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.icon-question {
+  height: 3rem;
+  width: 3rem;
+}
+
 @keyframes spin {
   0%, 80% { transform: rotate(0deg); }
   90% { transform: rotate(20deg); }
