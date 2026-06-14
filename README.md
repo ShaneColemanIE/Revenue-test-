@@ -41,3 +41,10 @@ script.js      - Quiz logic, scoring, sounds, confetti
 questions.js   - Question bank for hurling and Gaelic football
 netlify.toml   - Netlify configuration
 ```
+
+## Sources
+
+Question content is based on facts from:
+
+- [Hurling - Wikipedia](https://en.wikipedia.org/wiki/Hurling)
+- [Gaelic football - Wikipedia](https://en.wikipedia.org/wiki/Gaelic_football)

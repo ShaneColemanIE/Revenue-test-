@@ -98,6 +98,38 @@ const HURLING_QUESTIONS = [
     correct: 1,
     difficulty: "medium",
     fact: "Goalkeepers can use their hurley, hands, and body to make a save!"
+  },
+  {
+    q: "If a team scores a POINT (over the bar), what colour flag does the umpire wave?",
+    emoji: "🚩",
+    options: ["A white flag", "A green flag", "A red flag", "A blue flag"],
+    correct: 0,
+    difficulty: "medium",
+    fact: "A white flag means 1 point - keep your eyes peeled for it!"
+  },
+  {
+    q: "If a team scores a GOAL (in the net), what colour flag does the umpire wave?",
+    emoji: "🚩",
+    options: ["A white flag", "A green flag", "A yellow flag", "A black flag"],
+    correct: 1,
+    difficulty: "medium",
+    fact: "A green flag means a goal worth 3 points!"
+  },
+  {
+    q: "What is the flat, curved part of the hurley called - the bit you hit the sliotar with?",
+    emoji: "🏑",
+    options: ["The bas", "The blade", "The paddle", "The scoop"],
+    correct: 0,
+    difficulty: "medium",
+    fact: "That curved, flat striking part of the hurley is called the 'bas'!"
+  },
+  {
+    q: "The GAA was founded in 1884 in a hotel in which Irish town?",
+    emoji: "🏛️",
+    options: ["Thurles", "Dublin", "Cork", "Galway"],
+    correct: 0,
+    difficulty: "medium",
+    fact: "The GAA was founded at Hayes's Hotel in Thurles, County Tipperary, in 1884!"
   }
 ];
 
@@ -197,5 +229,37 @@ const FOOTBALL_QUESTIONS = [
     correct: 0,
     difficulty: "medium",
     fact: "Counties compete all summer long for the All-Ireland Championship trophy!"
+  },
+  {
+    q: "If a team scores a POINT (over the bar), what colour flag does the umpire wave?",
+    emoji: "🚩",
+    options: ["A white flag", "A green flag", "A red flag", "A yellow flag"],
+    correct: 0,
+    difficulty: "medium",
+    fact: "A white flag means 1 point!"
+  },
+  {
+    q: "If a team scores a GOAL (in the net), what colour flag does the umpire wave?",
+    emoji: "🚩",
+    options: ["A white flag", "A green flag", "A blue flag", "An orange flag"],
+    correct: 1,
+    difficulty: "medium",
+    fact: "A green flag means a goal worth 3 points!"
+  },
+  {
+    q: "Which of these is NOT allowed when hand-passing the ball in Gaelic football?",
+    emoji: "🙅",
+    options: ["Throwing the ball", "Striking it with a fist", "Tapping it with an open hand", "Punching it forward"],
+    correct: 0,
+    difficulty: "medium",
+    fact: "You can't throw the ball - you must strike or tap it. That's called a 'hand pass'!"
+  },
+  {
+    q: "Who wears a different coloured jersey on a Gaelic football team?",
+    emoji: "🧤",
+    options: ["The goalkeeper", "The captain", "The fastest player", "The referee"],
+    correct: 0,
+    difficulty: "easy",
+    fact: "The goalkeeper wears a different colour jersey so everyone can spot them easily!"
   }
 ];
