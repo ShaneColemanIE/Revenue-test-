@@ -130,6 +130,46 @@ const HURLING_QUESTIONS = [
     correct: 0,
     difficulty: "medium",
     fact: "The GAA was founded at Hayes's Hotel in Thurles, County Tipperary, in 1884!"
+  },
+  {
+    q: "What type of wood is a hurley usually made from?",
+    emoji: "🌳",
+    options: ["Ash wood", "Oak wood", "Plastic", "Bamboo"],
+    correct: 0,
+    difficulty: "easy",
+    fact: "Hurleys are traditionally carved from ash wood!"
+  },
+  {
+    q: "Hurling is often called...?",
+    emoji: "⚡",
+    options: ["The fastest field sport in the world", "The slowest sport in the world", "A type of dance", "A board game"],
+    correct: 0,
+    difficulty: "medium",
+    fact: "A hurley strike can send the sliotar flying over 150 km/h - super fast!"
+  },
+  {
+    q: "What is the trophy called for the winners of the All-Ireland hurling championship?",
+    emoji: "🏆",
+    options: ["The Liam MacCarthy Cup", "The Sam Maguire Cup", "The World Cup", "The Stanley Cup"],
+    correct: 0,
+    difficulty: "medium",
+    fact: "The Liam MacCarthy Cup is hurling's biggest prize!"
+  },
+  {
+    q: "In which city is Croke Park, the famous stadium where All-Ireland finals are played?",
+    emoji: "🏟️",
+    options: ["Dublin", "Cork", "Belfast", "Limerick"],
+    correct: 0,
+    difficulty: "easy",
+    fact: "Croke Park is in Dublin and is the home of the GAA!"
+  },
+  {
+    q: "What is the sport called when girls and women play hurling?",
+    emoji: "🏑",
+    options: ["Camogie", "Ladies hurling", "Net hurling", "Field hockey"],
+    correct: 0,
+    difficulty: "easy",
+    fact: "Camogie is the women's version of hurling, played with very similar rules!"
   }
 ];
 
@@ -261,5 +301,45 @@ const FOOTBALL_QUESTIONS = [
     correct: 0,
     difficulty: "easy",
     fact: "The goalkeeper wears a different colour jersey so everyone can spot them easily!"
+  },
+  {
+    q: "What is the trophy called for the winners of the All-Ireland football championship?",
+    emoji: "🏆",
+    options: ["The Sam Maguire Cup", "The Liam MacCarthy Cup", "The World Cup", "The FA Cup"],
+    correct: 0,
+    difficulty: "medium",
+    fact: "The Sam Maguire Cup is football's biggest prize!"
+  },
+  {
+    q: "In which city is Croke Park, the famous stadium where All-Ireland finals are played?",
+    emoji: "🏟️",
+    options: ["Dublin", "Cork", "Belfast", "Limerick"],
+    correct: 0,
+    difficulty: "easy",
+    fact: "Croke Park is in Dublin and is the home of the GAA!"
+  },
+  {
+    q: "What is the sport called when girls and women play Gaelic football?",
+    emoji: "⚽",
+    options: ["Ladies' Gaelic football", "Camogie", "Netball", "Hurling"],
+    correct: 0,
+    difficulty: "easy",
+    fact: "Ladies' Gaelic football is played all over Ireland and has its own association!"
+  },
+  {
+    q: "How many forwards are on a Gaelic football team?",
+    emoji: "👥",
+    options: ["6", "3", "9", "15"],
+    correct: 0,
+    difficulty: "medium",
+    fact: "A team has 1 goalkeeper, 6 backs, 2 midfielders and 6 forwards - that's 15 in total!"
+  },
+  {
+    q: "Can a player score a point by hand-passing the ball over the bar (not just kicking it)?",
+    emoji: "🙌",
+    options: ["Yes", "No, only kicks count", "Only the goalkeeper can", "Only with the left hand"],
+    correct: 0,
+    difficulty: "medium",
+    fact: "A point can be scored by kicking OR hand-passing the ball over the bar!"
   }
 ];
