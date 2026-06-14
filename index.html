@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a7d3a" />
+  <meta name="description" content="A fun quiz game for kids to learn the rules of hurling and Gaelic football!" />
+  <title>Hurling &amp; Gaelic Football Quiz for Kids</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <div class="cloud cloud1">☁️</div>
+    <div class="cloud cloud2">☁️</div>
+    <div class="cloud cloud3">☁️</div>
+  </div>
+
+  <div class="app">
+    <header class="app-header">
+      <h1><span class="emoji-spin">🏑</span> Hurling &amp; Football Quiz <span class="emoji-spin">⚽</span></h1>
+      <p class="subtitle">Learn the rules and have fun! 🍀</p>
+    </header>
+
+    <main id="screens">
+      <!-- START SCREEN -->
+      <section id="screen-start" class="screen active">
+        <div class="card">
+          <p class="big-emoji">🏆 🍀 ⚽ 🏑 🏆</p>
+          <h2>Ready to play?</h2>
+          <p>Answer fun questions about <strong>hurling</strong> and <strong>Gaelic football</strong> and become a GAA champion!</p>
+          <button class="btn btn-primary" id="btn-start">Let's Play! 🎉</button>
+        </div>
+      </section>
+
+      <!-- MODE SCREEN -->
+      <section id="screen-mode" class="screen">
+        <div class="card">
+          <h2>What do you want to learn about?</h2>
+          <div class="choice-grid">
+            <button class="btn btn-choice" data-mode="hurling">
+              <span class="choice-emoji">🏑</span>
+              <span>Hurling</span>
+            </button>
+            <button class="btn btn-choice" data-mode="football">
+              <span class="choice-emoji">⚽</span>
+              <span>Gaelic Football</span>
+            </button>
+            <button class="btn btn-choice" data-mode="mixed">
+              <span class="choice-emoji">🍀</span>
+              <span>Mix It Up!</span>
+            </button>
+          </div>
+          <button class="btn btn-secondary" id="btn-back-start">⬅ Back</button>
+        </div>
+      </section>
+
+      <!-- AGE SCREEN -->
+      <section id="screen-age" class="screen">
+        <div class="card">
+          <h2>Who's playing?</h2>
+          <div class="choice-grid choice-grid-2">
+            <button class="btn btn-choice" data-age="junior">
+              <span class="choice-emoji">🧒</span>
+              <span>Little Champs<br><small>(4-6 years)</small></span>
+            </button>
+            <button class="btn btn-choice" data-age="senior">
+              <span class="choice-emoji">🏃</span>
+              <span>Big Champs<br><small>(7-10 years)</small></span>
+            </button>
+          </div>
+          <button class="btn btn-secondary" id="btn-back-mode">⬅ Back</button>
+        </div>
+      </section>
+
+      <!-- QUIZ SCREEN -->
+      <section id="screen-quiz" class="screen">
+        <div class="card">
+          <div class="quiz-top">
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+              <span id="progress-label">Question 1 of 10</span>
+            </div>
+            <div class="score-badge">⭐ <span id="score-label">0</span></div>
+          </div>
+
+          <p class="question-emoji" id="question-emoji">🏑</p>
+          <h2 id="question-text">Question text here</h2>
+
+          <div class="answers-grid" id="answers-grid"></div>
+
+          <div class="feedback" id="feedback" aria-live="polite"></div>
+
+          <button class="btn btn-primary" id="btn-next" hidden>Next ➡</button>
+        </div>
+      </section>
+
+      <!-- RESULTS SCREEN -->
+      <section id="screen-results" class="screen">
+        <div class="card">
+          <p class="big-emoji" id="results-emoji">🏆</p>
+          <h2 id="results-title">Great job!</h2>
+          <p id="results-score">You scored 8 out of 10!</p>
+          <div class="stars" id="results-stars">⭐⭐⭐</div>
+          <p id="results-message"></p>
+          <div class="results-buttons">
+            <button class="btn btn-primary" id="btn-play-again">Play Again 🔁</button>
+            <button class="btn btn-secondary" id="btn-change-mode">Choose Another Topic</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Made for young GAA fans 🍀</p>
+    </footer>
+  </div>
+
+  <div id="confetti-root" aria-hidden="true"></div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
